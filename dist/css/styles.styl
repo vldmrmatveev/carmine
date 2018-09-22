@@ -79,6 +79,7 @@ input
 	-webkit-appearance none
 	-moz-appearance none
 	appearance none
+	border-radius 0
 sup
 	font-size 6px
 	vertical-align top
@@ -461,6 +462,7 @@ ul.soc
 				background-color rgba(34, 31, 39, 0.7)
 				position relative
 				padding 20px 30px
+				cursor pointer
 				svg
 					position absolute
 					right 10px
@@ -667,7 +669,9 @@ footer
 		padding 60px 30px
 		box-sizing border-box
 		max-height 90%
-		//overflow scroll
+		overflow-x hidden
+		overflow scroll
+		//overflow-x auto
 		img.avatar
 			width 200px
 			height 200px
@@ -679,6 +683,7 @@ footer
 			position absolute
 			right 10px
 			top 10px
+			cursor pointer
 		h4
 			font-size 26px
 			margin-bottom 20px
@@ -696,7 +701,7 @@ footer
 			li
 				margin 0 20px 0 0
 .popupbackground.flat
-	display flex
+	//display flex
 	.popup
 		flex-direction column
 		padding 0
@@ -704,6 +709,12 @@ footer
 			width 100%
 		.popup-body
 			padding 40px 10% 50px 10%
+			width 100%
+			box-sizing border-box
+			//overflow-x hidden
+			//overflow-y scroll
+			ul.soc
+				margin 20px 0
 			p.low-text
 				font-size 18px
 			p.main-text
@@ -727,10 +738,22 @@ footer
 						font-size 14px
 				ul
 					padding-left 0
-		.close-btn
-			right -30px
-			top 0
-			z-index 30
+		.hr
+			width 100%
+			border-top 1px solid black
+			margin-top 40px
+.send-popup
+	display flex
+	justify-content space-between
+	align-items center
+	margin-top 20px
+	button
+		background-color #6e2bd1
+		border 1px solid #6e2bd1
+		color white
+		text-transform uppercase
+		padding 20px 30px
+
 /*--------- hidemenu settings------------*/
 .hidemenu
 	position fixed
@@ -779,7 +802,12 @@ footer
 	width 28px
 	height 33px 
 	z-index 11
-
+.slick
+	width 100%
+.slick-item
+	width 100%
+.slick-item img
+	width 100%
 /* animated hidemenu button */
 
 .hidemenu__button span {
@@ -878,10 +906,22 @@ footer
 		bottom 0
 		right 0
 		margin auto
+.slick-dots
+	bottom -30px
 .slick-next
 	top 106px
 	&:before
 		transform rotate(180deg)
+.slick-dots li button
+	border 2px solid #d4d4d4
+	border-radius 100%
+	width 10px
+	height 10px
+	&:before
+		display none
+.slick-dots li.slick-active button
+	border-color #6e2bd1
+	background-color #6e2bd1
 /* ---- media ----*/
 
 @media (min-width: 1280px) {
@@ -987,6 +1027,22 @@ footer
 	}
 }
 @media (max-width: 1199px) {
+	.popupbackground.flat .popup .popup-body p.low-text {
+		font-size: 12px;
+	}
+	.popupbackground.flat .popup .popup-body h5 {
+		font-size: 26px;
+	}
+	.popupbackground.flat .popup .popup-body .table-content p {
+		font-size: 12px;
+	}
+	.popupbackground.flat .popup .popup-body .table-content span.meter {
+		font-size: 20px;
+	}
+	.popupbackground.flat .popup .popup-body .table-content ul {
+		font-size: 14px;}
+		.popupbackground.flat .popup .popup-body p.main-text {
+			font-size: 14px;}
 	footer ul li a {
 		width: 40px;
 		height: 40px;
@@ -1315,6 +1371,10 @@ footer
 	
 }
 @media (max-width: 600px) {
+	.send-popup,
+	.popupbackground.flat .popup .popup-body .table-content {
+		flex-direction: column;
+	}
 	.our-crew__text h2 {
 		font-size: 36px;
 	}
