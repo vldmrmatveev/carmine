@@ -412,6 +412,7 @@ ul.soc
 		width 50%
 		height 2px
 		background-color white
+		transition 0.2s ease all
 	&:after
 		content ''
 		position absolute
@@ -423,6 +424,10 @@ ul.soc
 		height 50%
 		width 2px
 		background-color white
+		transition 0.2s ease all
+.plus-there.open:before,
+.plus-there.open:after
+	transform rotate(45deg)
 /* ---- crew -----*/
 #crew
 	background-image url('../img/crew.png')

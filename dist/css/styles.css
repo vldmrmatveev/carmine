@@ -484,6 +484,7 @@ ul.soc li a.no-hover svg path {
   width: 50%;
   height: 2px;
   background-color: #fff;
+  transition: 0.2s ease all;
 }
 .plus-there:after {
   content: '';
@@ -496,6 +497,11 @@ ul.soc li a.no-hover svg path {
   height: 50%;
   width: 2px;
   background-color: #fff;
+  transition: 0.2s ease all;
+}
+.plus-there.open:before,
+.plus-there.open:after {
+  transform: rotate(45deg);
 }
 /* ---- crew -----*/
 #crew {

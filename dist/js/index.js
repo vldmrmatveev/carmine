@@ -80,16 +80,16 @@ $(document).ready(function(){
 
 	
 	if ($(window).width() < 768) {
-		$('body').click(function (e){
-			var div = $(".plus-there"); 
-			if (!div.is(e.target) 
-					&& div.has(e.target).length === 0) { 
-				$('.price-card__hide').css('opacity', '0');
-			}
-		});
 		$('.plus-there').click(function(){
-			$('.price-items .price-card__hide').css('opacity', '0');
-			$(this).parent().parent().children().first().css('opacity', '1');
+			if ($(this).hasClass('open')) {
+				$('.price-items .price-card__hide').css('opacity', '0');
+				$(this).removeClass('open');
+			} else {
+				$('.price-items .price-card__hide').css('opacity', '0');
+				$(this).parent().parent().children().first().css('opacity', '1');
+				$(this).addClass('open');
+			}
+			
 		});
 	} else {
 		$('.soc li a').hover(function(){
