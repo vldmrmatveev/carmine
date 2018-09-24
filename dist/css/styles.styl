@@ -175,12 +175,13 @@ section.about-content
 	position relative
 	svg
 		position absolute
-		bottom -5px
-		left -50px
+		top 0
+		left -100px
 	p
 		margin-bottom 25px
 	p.last-text
 		font-size 26px
+		position relative
 .about-content__items
 	display flex
 	align-items flex-end
@@ -334,6 +335,8 @@ ul.soc
 			ul
 				list-style-type disc
 				font-weight 300
+				margin auto
+				max-width 250px
 				li
 					margin-bottom 5px
 			ul.more
@@ -448,7 +451,8 @@ ul.soc
 			display flex
 			justify-content space-between
 			outline none
-			overflow hidden
+			//overflow hidden
+			margin-bottom 1px
 		.carousel-card
 			width 48%
 			&:hover img
@@ -458,7 +462,7 @@ ul.soc
 				filter grayscale(1)
 				transition 0.2s ease all
 			&__text
-				margin-top -99px
+				margin-top -98.5px
 				background-color rgba(34, 31, 39, 0.7)
 				position relative
 				padding 20px 30px
@@ -893,6 +897,8 @@ footer
 	border 1px solid black
 	width 70px
 	height 70px
+	&:hover
+		background-color lightgrey
 	&:before
 		background-image url('../img/angle.svg')
 		background-size contain
@@ -965,6 +971,19 @@ footer
 	}
 }
 @media (max-width: 1300px) {
+.our-crew__carousel .carousel-card img {
+    width: 100%;
+    filter: grayscale(1);
+    transition: 0.2s ease all;
+    object-fit: cover;
+    height: 100%;
+}
+	.our-crew__carousel .our-crew__carousel-items {
+		margin-bottom: 0;
+	}
+	.our-crew__carousel .carousel-card__text {
+		margin-top: -90px;
+	}
 	.slick-prev, .slick-next {
 		width: 40px;
 		height: 40px;
@@ -972,7 +991,7 @@ footer
 		left: -60px;
 	}
 	.our-crew__carousel {
-			width: calc(65% - 70px);
+			width: calc(63% - 70px);
 	}
 	 .slick-next {
 		 top: 60px;
@@ -1027,6 +1046,10 @@ footer
 	}
 }
 @media (max-width: 1199px) {
+	.about-content__text svg {
+		transform: scale(0.7);
+		left: -75px;
+	}
 	.popupbackground.flat .popup .popup-body p.low-text {
 		font-size: 12px;
 	}
@@ -1123,6 +1146,13 @@ footer
 	}
 }
 @media (max-width: 991px) {
+.our-crew__carousel .carousel-card__text {
+    margin-top: -78px;
+}
+	.price-items .price-card__hide ul {
+		max-width: 170px;
+		margin: auto;
+	}
 	.popupbackground .popup img.avatar {
 		width: 150px;
 		height: 150px;
@@ -1206,12 +1236,6 @@ footer
 	.price-items .price-card__foot button.send {
 		width: calc(100% - 30px);
 		height: 30px;
-	}
-	.price-items .price-card__hide ul.more li:after {
-		left: -14px;
-		}
-	.price-items .price-card__hide ul.more li:before {
-		left: -21px;
 	}
 	.calc__body button.prev span {
 		margin-left: 10px;
@@ -1302,6 +1326,9 @@ footer
 	}
 }
 @media (max-width: 767px) {
+	.price-items .price-card:hover .price-card__hide {
+		opacity: 0;
+	}
 	.popupbackground .popup {
 		overflow: scroll;
 	}
@@ -1371,6 +1398,17 @@ footer
 	
 }
 @media (max-width: 600px) {
+	.our-crew__carousel .our-crew__carousel-items {
+		position: relative;
+	}
+	.our-crew__carousel .carousel-card__text {
+		margin-top: 0;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		box-sizing: border-box;
+		width: 100%;
+	}
 	.send-popup,
 	.popupbackground.flat .popup .popup-body .table-content {
 		flex-direction: column;
@@ -1412,6 +1450,9 @@ footer
 		}
 }
 @media (max-width: 480px) {
+	.our-crew__carousel .our-crew__carousel-items {
+		margin-bottom: 1px;
+	}
 	.popupbackground.crewmember .popup {
 		flex-direction: column;}
 	.popupbackground.crewmember .popup img.avatar {

@@ -1505,6 +1505,16 @@ footer ul li a:hover svg path {
   }
 }
 @media (max-width: 767px) {
+  .price-items .price-card:hover .price-card__hide {
+    opacity: 0;
+  }
+  .price-items .price-card button.send {
+    opacity: 1;
+    pointer-events: initial;
+  }
+  .plus-there {
+    border-right: 1px solid #fff;
+  }
   .popupbackground .popup {
     overflow: scroll;
   }
