@@ -80,7 +80,7 @@ $(document).ready(function(){
 
 	
 	if ($(window).width() < 768) {
-		$('body').mouseup(function (e){
+		$('body').click(function (e){
 			var div = $(".plus-there"); 
 			if (!div.is(e.target) 
 					&& div.has(e.target).length === 0) { 
